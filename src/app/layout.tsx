@@ -8,9 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Buscador de ferramentas',
   description: `Explore nosso site abrangente que reúne 
-  uma ampla gama de ferramentas existentes no mercado. 
-  Conecte-se facilmente com as páginas oficiais de 
-  cada ferramenta para obter informações detalhadas.`,
+  uma ampla gama de ferramentas existentes no mercado.`,
 }
 
 export default async function RootLayout({
