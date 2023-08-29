@@ -10,7 +10,11 @@ interface ToolsContextProps {
   hasPrevPage: boolean;
   hasNextPage: boolean;
   totalTools: number;
+  selectedTool: Tool;
+  isModalOpen: boolean;
+  setIsModalOpen(isOpen: boolean): void;
   handleToolSearch(searchedValue: string): void;
+  handleModalTrigger(tool: Tool): void;
 }
 
 const toolsContext = createContext({} as ToolsContextProps);
@@ -23,6 +27,8 @@ interface ToolsProviderProps {
 export function ToolsProvider(props: ToolsProviderProps) {
   const [searchedName, setSearchedName] = useState('');
   const [tools] = useState(props.tools);
+  const [selectedTool, setSelectedTool] = useState({} as Tool);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -50,6 +56,32 @@ export function ToolsProvider(props: ToolsProviderProps) {
     setSearchedName(searchedValue);
   }
 
+  const handleModalTrigger = (tool: Tool) => {
+    const storedTools = localStorage.getItem('visualizedTools');
+
+    if (!!storedTools) {
+      const visualizedTools: Tool[] = JSON.parse(storedTools);
+      const existingIndex = visualizedTools.findIndex(({ app_id }) => app_id === tool.app_id);
+
+      if (existingIndex !== -1) {
+        visualizedTools.splice(existingIndex, 1);
+      }
+
+      visualizedTools.unshift(tool);
+
+      if (visualizedTools.length > 3) {
+        visualizedTools.pop();
+      }
+
+      localStorage.setItem('visualizedTools', JSON.stringify(visualizedTools));
+    } else {
+      localStorage.setItem('visualizedTools', JSON.stringify([tool]));
+    }
+
+    setSelectedTool(tool);
+    setIsModalOpen(true);
+  }
+
   return (
     <toolsContext.Provider
       value={{
@@ -58,7 +90,11 @@ export function ToolsProvider(props: ToolsProviderProps) {
         hasPrevPage,
         hasNextPage,
         totalTools,
-        handleToolSearch
+        selectedTool,
+        isModalOpen,
+        setIsModalOpen,
+        handleToolSearch,
+        handleModalTrigger
       }}
     >
       {props.children}

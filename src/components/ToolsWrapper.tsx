@@ -1,5 +1,6 @@
 import { useToolsContext } from "@context/tools";
 import ToolCard from "./ToolCard";
+import ToolModal from "./ToolModal";
 
 export default function ToolsWrapper() {
   const { filteredTools, searchedName } = useToolsContext();
@@ -8,12 +9,10 @@ export default function ToolsWrapper() {
     <section className="p-4 flex justify-center flex-wrap gap-5">
       {
         filteredTools.length ?
-          filteredTools.map(({ app_id, name, icon, color }) => (
+          filteredTools.map((tool) => (
             <ToolCard
-              key={app_id}
-              name={name}
-              iconUrl={icon}
-              bgColor={color}
+              key={tool.app_id}
+              tool={tool}
             />
           )) :
           <p>
@@ -21,6 +20,7 @@ export default function ToolsWrapper() {
             Que tal tentar um termo diferente?
           </p>
       }
+      <ToolModal />
     </section>
   );
 }
