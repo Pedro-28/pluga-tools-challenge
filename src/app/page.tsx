@@ -1,13 +1,15 @@
 'use client'
 
-import Header from "@components/Header";
+import PaginationControls from "@components/PaginationControls";
 import ToolsWrapper from "@components/ToolsWrapper";
+import Header from "@components/Header";
 
 export default function Home() {
   return (
     <main className="flex flex-col h-screen max-w-7xl mx-auto">
       <Header />
       <ToolsWrapper />
+      <PaginationControls />
     </main>
   )
 }

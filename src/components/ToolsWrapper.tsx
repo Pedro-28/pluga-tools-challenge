@@ -1,13 +1,8 @@
 import { useToolsContext } from "@context/tools";
 import ToolCard from "./ToolCard";
 
-
 export default function ToolsWrapper() {
-  const { tools, searchedValue } = useToolsContext();
-
-  const filteredTools = tools.filter(({ name }) => (
-    name.toLowerCase().includes(searchedValue.toLowerCase())
-  ));
+  const { filteredTools, searchedName } = useToolsContext();
 
   return (
     <section className="p-4 flex justify-center flex-wrap gap-5">
@@ -22,7 +17,7 @@ export default function ToolsWrapper() {
             />
           )) :
           <p>
-            Ops! Não encontramos nenhuma ferramenta com o nome &quot;{searchedValue}&quot; fornecido.
+            Ops! Não encontramos nenhuma ferramenta com o nome &quot;{searchedName}&quot; fornecido.
             Que tal tentar um termo diferente?
           </p>
       }
