@@ -6,7 +6,7 @@ import Header from "@components/Header";
 
 export default function Home() {
   return (
-    <main className="flex flex-col h-screen max-w-7xl mx-auto">
+    <main className="flex flex-col h-screen max-w-5xl mx-auto">
       <Header />
       <ToolsWrapper />
       <PaginationControls />

@@ -33,7 +33,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-slate-300 ${inter.className}`}
+        className={`bg-slate-50 ${inter.className}`}
       >
         <ToolsProvider tools={tools}>
           {children}
