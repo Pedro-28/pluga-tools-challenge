@@ -29,25 +29,22 @@ export default function PaginationControls() {
         <ChevronsLeft size="1.7rem" />
       </Button>
 
-      {window.innerWidth > 500 ? (
-        pageNumbers.map((pageNum) => (
-          <Button
-            key={`page-${pageNum}`}
-            className={
-              page === `${pageNum}`
-                ? "border-sky-500 text-sky-500 -translate-y-1"
-                : undefined
-            }
-            onClick={() => {
-              router.push(`/?page=${pageNum}`);
-            }}
-          >
-            {pageNum}
-          </Button>
-        ))
-      ) : (
-        <p className="text-lg font-medium text-zinc-500">{`${page}/${totalPages}`}</p>
-      )}
+      {pageNumbers.map((pageNum) => (
+        <Button
+          key={`page-${pageNum}`}
+          className={
+            page === `${pageNum}`
+              ? "border-sky-500 text-sky-500 -translate-y-1 hidden sm:block"
+              : "hidden sm:block"
+          }
+          onClick={() => {
+            router.push(`/?page=${pageNum}`);
+          }}
+        >
+          {pageNum}
+        </Button>
+      ))}
+      <p className="text-lg font-medium text-zinc-500 sm:hidden">{`${page}/${totalPages}`}</p>
 
       <Button
         disabled={!hasNextPage}
