@@ -18,12 +18,15 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
       "@components/*": ["./src/components/*"],
       "@context/*": ["./src/context/*"],
       "@types": ["./src/types"],
+      "@app/*": ["./src/app/*"],
       "@/*": ["./src/*"]
-    }
+    },
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

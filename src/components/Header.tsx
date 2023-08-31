@@ -7,13 +7,19 @@ export default function Header() {
   const { handleToolSearch } = useToolsContext();
   return (
     <header className="w-full flex items-center gap-3 px-4 py-6">
-      <Image
-        src="/plugaLogo.png"
-        alt="Logo da Pluga"
-        width={100}
-        height={100}
-        className="w-auto h-auto"
-      />
+      <a
+        href="https://pluga.co/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image
+          src="/plugaLogo.png"
+          alt="Logo da Pluga"
+          width={100}
+          height={100}
+          className="w-auto h-auto"
+        />
+      </a>
 
       <div className="relative w-full h-14">
         <Search className="absolute top-1/2 -translate-y-1/2 left-2 text-zinc-400" />
