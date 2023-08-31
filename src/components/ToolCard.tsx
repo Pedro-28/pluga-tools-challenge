@@ -1,8 +1,9 @@
-import { Tool } from "@types";
-import { Card, CardTitle } from "./ui/card";
-import { useToolsContext } from "@context/tools";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+
+import { useToolsContext } from "@context/tools";
+import { Card, CardTitle } from "./ui/card";
+import { Tool } from "@types";
 
 interface ToolCardProps {
   tool: Tool;
