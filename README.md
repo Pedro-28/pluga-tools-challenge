@@ -53,7 +53,7 @@ npm run dev
 Para executar os testes:
 
 ```sh
-npm test
+npm run test
 ```
 
 ## Agradecimentos
