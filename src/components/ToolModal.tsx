@@ -22,7 +22,10 @@ export default function ToolModal() {
 
   return (
     <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-      <DialogContent className="p-10 max-w-2xl max-h-[37.5rem] bg-slate-50 overflow-x-auto">
+      <DialogContent
+        className="p-10 max-w-2xl max-h-[37.5rem] bg-slate-50 overflow-x-auto"
+        data-testid="tool_modal"
+      >
         <DialogHeader className="flex items-center justify-evenly gap-4 sm:flex-row sm:gap-0">
           <div className="p-2 rounded-md" style={{ backgroundColor: color }}>
             <Image

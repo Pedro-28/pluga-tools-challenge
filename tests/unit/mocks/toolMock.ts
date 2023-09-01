@@ -1,4 +1,6 @@
-export const tools = [
+import { Tool } from "@types";
+
+export const tools: Tool[] = [
   {
     app_id: "example_tool",
     name: "Example tool",
