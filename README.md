@@ -14,6 +14,14 @@ Neste repositório, apresentamos a solução para um desafio proposto pela Pluga
 - [Jest](https://jestjs.io/)
 - [Testing Library](https://testing-library.com/)
 
+## Resultado do desafio
+
+> Visualização em desktop
+  <img alt="Visualização do site do desafio Pluga" src="https://github-production-user-asset-6210df.s3.amazonaws.com/99993116/265099647-a1e5c79c-2a27-4578-bf96-31eb4381ac0e.gif" />
+
+> Visualização em mobile
+  <img alt="Visualização do site do desafio Pluga" src="https://github-production-user-asset-6210df.s3.amazonaws.com/99993116/265100824-5c371389-1b68-4391-8a4e-de84387e3d08.gif" />
+
 ## Como Utilizar o Projeto
 
 1. Clone o Projeto:
