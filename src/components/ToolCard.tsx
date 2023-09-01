@@ -27,6 +27,7 @@ export default function ToolCard({
         cardClassName
       )}
       style={{ backgroundColor: color }}
+      data-testid="tool_card"
     >
       <Image
         priority

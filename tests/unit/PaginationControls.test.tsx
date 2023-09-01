@@ -1,8 +1,9 @@
-import PaginationControls from "@components/PaginationControls";
 import { render } from "@testing-library/react";
 
+import PaginationControls from "@components/PaginationControls";
+
 jest.mock("next/navigation", () => ({
-  useRouter: jest.fn(() => ({ push: jest.fn })),
+  useRouter: jest.fn(() => ({ push: jest.fn() })),
   useSearchParams: jest.fn(() => ({
     get: jest.fn((param: string) => {
       if (param === "page") {
@@ -40,5 +41,9 @@ describe("PaginationControls component", () => {
     const buttonElementList = getAllByRole("button");
 
     expect(buttonElementList[0]).toBeDisabled();
+  });
+
+  afterAll(() => {
+    jest.restoreAllMocks();
   });
 });
